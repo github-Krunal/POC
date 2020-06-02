@@ -8,6 +8,7 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { GridDataSource } from 'src/app/shared/datasource';
+import { ExcelService } from 'src/app/shared/excel.service';
 
 @Component({
   selector: 'app-table',
@@ -34,7 +35,11 @@ export class TableComponent implements OnInit {
   // dataSource = new MatTableDataSource<any>(this.dataSources);
   // @ViewChild(MatPaginator) paginator: MatPaginator;
   // @ViewChild(MatSort) sort: MatSort;
-  constructor(private http: HttpClient, private service: SignUpService) {}
+  constructor(
+    private http: HttpClient,
+    private service: SignUpService,
+    private excelServiceProvider: ExcelService
+  ) {}
 
   ngOnInit(): void {
     this.getdata();
@@ -63,5 +68,10 @@ export class TableComponent implements OnInit {
       this.sort
     );
     this.tableListDatabase.dataChange.next(this.tableList);
+  }
+
+  exportAsXLSX() {
+    debugger;
+    this.excelServiceProvider.exportAsExcelFile(this.tableList, 'sample');
   }
 }

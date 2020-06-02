@@ -26,3 +26,4 @@
 <mat-paginator class="hrz-paginator" #paginator [length]="tableList.length" [pageIndex]="0" [pageSize]="5"
   [pageSizeOptions]="[5, 10, 15, 20]" [ngClass]="{'show': tableList?.length && tableList?.length > 5}">
 </mat-paginator>
+<button class="btn btn-danger" (click)="exportAsXLSX()">excel download</button>
