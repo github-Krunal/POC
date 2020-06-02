@@ -1,11 +1,44 @@
-import { NgModule } from '@angular/core';
+import {
+  NgModule,
+  NO_ERRORS_SCHEMA,
+  CUSTOM_ELEMENTS_SCHEMA,
+} from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-
-const routes: Routes = [];
+const routes: Routes = [
+  { path: '', redirectTo: 'table', pathMatch: 'full' },
+  {
+    path: 'account',
+    loadChildren: () =>
+      import('./component/account/account.module').then(
+        (account) => account.AccountModule
+      ),
+    data: { breadcrumb: 'account' },
+  },
+  {
+    path: 'chart',
+    loadChildren: () =>
+      import('./component/chart/chart.module').then((m) => m.ChartModule),
+    data: { breadcrumb: 'chart' },
+  },
+  {
+    path: 'table',
+    loadChildren: () =>
+      import('./component/table/table.module').then((m) => m.TableModule),
+    data: { breadcrumb: 'table' },
+  },
+  {
+    path: 'excel',
+    loadChildren: () =>
+      import('./download-excel/download-excel.module').then(
+        (m) => m.DownloadExcelModule
+      ),
+    data: { breadcrumb: 'excel' },
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

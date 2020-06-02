@@ -1,0 +1,28 @@
+<mat-table [dataSource]="tableDataSource" class="mat-elevation-z8" matSort>
+  <!-- Position Column -->
+
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="userId">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> userId </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.userId}} </mat-cell>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="id">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> id </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="title">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> title </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.title}} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="getRecord(row)"></mat-row>
+</mat-table>
+<mat-paginator class="hrz-paginator" #paginator [length]="tableList.length" [pageIndex]="0" [pageSize]="5"
+  [pageSizeOptions]="[5, 10, 15, 20]" [ngClass]="{'show': tableList?.length && tableList?.length > 5}">
+</mat-paginator>
