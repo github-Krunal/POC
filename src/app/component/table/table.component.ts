@@ -9,6 +9,7 @@ import { MatTableDataSource } from '@angular/material/table';
 import { MatSort } from '@angular/material/sort';
 import { GridDataSource } from 'src/app/shared/datasource';
 import { ExcelService } from 'src/app/shared/excel.service';
+import { CsvService } from 'src/app/shared/csv.service';
 
 @Component({
   selector: 'app-table',
@@ -38,7 +39,8 @@ export class TableComponent implements OnInit {
   constructor(
     private http: HttpClient,
     private service: SignUpService,
-    private excelServiceProvider: ExcelService
+    private excelServiceProvider: ExcelService,
+    private csvServiceProvider: CsvService
   ) {}
 
   ngOnInit(): void {
@@ -73,5 +75,18 @@ export class TableComponent implements OnInit {
   exportAsXLSX() {
     debugger;
     this.excelServiceProvider.exportAsExcelFile(this.tableList, 'sample');
+  }
+  exportAsCsv() {
+    let headers = ['no1', 'no2', 'no3'];
+    let name = 'Download file';
+    debugger;
+    let xyz = [];
+    this.tableList.forEach((value) => {
+      xyz.push({ userID: value.userId, id: value.id, title: value.title });
+    });
+    console.log(xyz);
+    debugger;
+
+    this.csvServiceProvider.CsvExportFile(headers, name, xyz);
   }
 }

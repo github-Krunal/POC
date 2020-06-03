@@ -6,7 +6,7 @@ import {
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'table', pathMatch: 'full' },
+  { path: '', redirectTo: 'addMultigrid', pathMatch: 'full' },
   {
     path: 'account',
     loadChildren: () =>
@@ -34,6 +34,22 @@ const routes: Routes = [
         (m) => m.DownloadExcelModule
       ),
     data: { breadcrumb: 'excel' },
+  },
+  {
+    path: 'excelToJson',
+    loadChildren: () =>
+      import('./component/excel-tojson/excel-tojson.module').then(
+        (m) => m.ExcelTojsonModule
+      ),
+    data: { breadcrumb: 'excelToJson' },
+  },
+  {
+    path: 'addMultigrid',
+    loadChildren: () =>
+      import('./component/add-mutiple-grid/add-mutiple-grid.module').then(
+        (m) => m.AddMutipleGridModule
+      ),
+    data: { breadcrumb: 'multigrid' },
   },
 ];
 

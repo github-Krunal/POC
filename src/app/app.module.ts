@@ -15,9 +15,11 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { LoaderComponent } from './shared/loader/loader.component';
 import { BreadcumModule } from './component/breadcum/breadcum.module';
+import { ExcelTojsonComponent } from './component/excel-tojson/excel-tojson.component';
+import { AddMutipleGridComponent } from './component/add-mutiple-grid/add-mutiple-grid.component';
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, LoaderComponent],
+  declarations: [AppComponent, MenuComponent, LoaderComponent, ExcelTojsonComponent, AddMutipleGridComponent],
   imports: [
     CommonModule,
     BrowserModule,

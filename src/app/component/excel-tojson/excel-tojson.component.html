@@ -1,0 +1,7 @@
+<!-- <input type="file" accept=".xlsx"> -->
+<input type="file" class="form-control-file" id="exampleFormControlFile1" accept=".xls,.xlsx"
+  (change)="onFileChange($event)">
+
+<ul class="list-group" *ngFor="let item of list">
+  <li class="list-group-item">{{item.id}}-{{item.title}}</li>
+</ul>

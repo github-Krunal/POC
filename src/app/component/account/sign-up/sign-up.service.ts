@@ -18,7 +18,7 @@ export class SignUpService {
   private _getRegistrationApiUrl: string =
     ApiRoute.Rest_Api_EndPoint + 'getData';
   private deleteApi = 'https://jsonplaceholder.typicode.com/posts';
-  public customapi = 'https://jsonplaceholder.typicode.com/posts';
+  // public customapi = 'https://jsonplaceholder.typicode.com/posts';
 
   constructor(private http: HttpClient) {}
 
@@ -38,6 +38,6 @@ export class SignUpService {
       .pipe(map((response: any) => response));
   }
   public getcustom(): Observable<any> {
-    return this.http.get(this.customapi).pipe(map((response: any) => response));
+    return this.http.get(this.deleteApi).pipe(map((response: any) => response));
   }
 }
