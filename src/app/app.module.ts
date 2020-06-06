@@ -19,7 +19,13 @@ import { ExcelTojsonComponent } from './component/excel-tojson/excel-tojson.comp
 import { AddMutipleGridComponent } from './component/add-mutiple-grid/add-mutiple-grid.component';
 
 @NgModule({
-  declarations: [AppComponent, MenuComponent, LoaderComponent, ExcelTojsonComponent, AddMutipleGridComponent],
+  declarations: [
+    AppComponent,
+    MenuComponent,
+    LoaderComponent,
+    ExcelTojsonComponent,
+    AddMutipleGridComponent,
+  ],
   imports: [
     CommonModule,
     BrowserModule,

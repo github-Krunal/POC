@@ -1,0 +1,21 @@
+<!-- [(ngModel)]="selectProject" -->
+<!-- (ngModelChange)="onProjectSelected(selectProject)" -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="form-group">
+        <mat-select placeholder="select language" id="language" class="form-control" [(ngModel)]="selectalnguage"
+          (ngModelChange)="onlanguageSelect(selectalnguage)">
+          <mat-option>
+            select
+          </mat-option>
+          <mat-option *ngFor="let item of language_Dropdwon" [value]="item">
+            {{item}}
+          </mat-option>
+        </mat-select>
+      </div>
+    </div>
+  </div>
+
+  <h1>{{'HRZ_CMP_DSB_PENDING_ACTIONS'|translate}}</h1>

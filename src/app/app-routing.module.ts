@@ -6,7 +6,7 @@ import {
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'addMultigrid', pathMatch: 'full' },
+  { path: '', redirectTo: 'Language', pathMatch: 'full' },
   {
     path: 'account',
     loadChildren: () =>
@@ -50,6 +50,14 @@ const routes: Routes = [
         (m) => m.AddMutipleGridModule
       ),
     data: { breadcrumb: 'multigrid' },
+  },
+  {
+    path: 'Language',
+    loadChildren: () =>
+      import('./component/language/language.module').then(
+        (m) => m.LanguageModule
+      ),
+    data: { breadcrumb: 'language' },
   },
 ];
 

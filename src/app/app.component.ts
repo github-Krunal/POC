@@ -7,9 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'portfolio';
-  onRouterPathChanged(eventData: any) {
-    if (eventData) {
-      debugger;
-    }
-  }
 }
