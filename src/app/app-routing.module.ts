@@ -6,7 +6,7 @@ import {
 import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'Language', pathMatch: 'full' },
+  { path: '', redirectTo: 'drag', pathMatch: 'full' },
   {
     path: 'account',
     loadChildren: () =>
@@ -14,6 +14,14 @@ const routes: Routes = [
         (account) => account.AccountModule
       ),
     data: { breadcrumb: 'account' },
+  },
+  {
+    path: 'drag',
+    loadChildren: () =>
+      import('./component/drap-drop/drap-drop.module').then(
+        (drag) => drag.DrapDropModule
+      ),
+    data: { breadcrumb: 'drag' },
   },
   {
     path: 'chart',
