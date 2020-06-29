@@ -14,7 +14,6 @@ export class TranslateService {
   }
   public selectedLanguage(language) {
     if (this.currentLanguage !== language) {
-      debugger;
       this.currentLanguage = language;
       this.getTranslationsByLocaleId(this.currentLanguage);
     }

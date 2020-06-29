@@ -26,11 +26,9 @@ export class ExcelTojsonComponent implements OnInit {
   //     }, {});
   //     const dataString = JSON.stringify(jsonData);
   //     this.list = jsonData;
-  //     debugger;
   //   };
   //   reader.readAsBinaryString(file);
   //   console.log(this.list);
-  //   debugger;
   // }
 
   onFileChange(event: any) {

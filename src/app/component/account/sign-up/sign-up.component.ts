@@ -117,7 +117,6 @@ export class SignUpComponent implements OnInit {
   //   this._IsLowerCase = _lowerCaseCount >= 1 ? false : true;
   //   this._IsNumberCase = _numberCount >= 1 ? false : true;
   //   this._IsSpecialCharacter = _specialCount >= 1 ? false : true;
-  //   debugger;
   //   if (
   //     !this._IsUpperCase &&
   //     !this._IsLowerCase &&

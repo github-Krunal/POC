@@ -20,7 +20,6 @@ export class CsvService {
   constructor() {}
 
   public CsvExportFile(headers?: string[], name?: string, data?: any) {
-    debugger;
     this.csvOptions.title = name;
     this.csvOptions.headers = headers;
     new Angular5Csv(data, name, this.csvOptions);

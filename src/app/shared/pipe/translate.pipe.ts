@@ -13,7 +13,6 @@ export class TranslatePipe implements PipeTransform {
       this.translationService.currenLanguageTranslations &&
       this.translationService.currenLanguageTranslations.hasOwnProperty(value)
     ) {
-      debugger;
       return this.translationService.currenLanguageTranslations[value];
     } else {
       return value;

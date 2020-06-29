@@ -31,6 +31,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { DragDropModule } from '@angular/cdk/drag-drop';
+import { MatNativeDateModule } from '@angular/material/core';
 
 const MaterialComponents = [
   DragDropModule,
@@ -65,6 +66,8 @@ const MaterialComponents = [
   MatTableModule,
   MatSortModule,
   MatPaginatorModule,
+  MatDatepickerModule,
+  MatNativeDateModule,
 ];
 
 @NgModule({

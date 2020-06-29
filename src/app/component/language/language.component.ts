@@ -7,6 +7,7 @@ import { TranslateService } from 'src/app/shared/pipe/translate.service';
   styleUrls: ['./language.component.scss'],
 })
 export class LanguageComponent implements OnInit {
+  hide = true;
   public language_Dropdwon: any = ['en', 'du'];
   public selectalnguage: string = '';
   constructor(private languageservice: TranslateService) {}

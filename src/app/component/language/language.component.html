@@ -19,3 +19,36 @@
   </div>
 
   <h1>{{'HRZ_CMP_DSB_PENDING_ACTIONS'|translate}}</h1>
+
+
+
+
+  <div class="row">
+    <div class="col-md-4">
+      <div class="form-group">
+        <label for=""></label>
+        <input [type]="hide ? 'password' : 'text'" name="" id="" class="form-control" placeholder=""
+          aria-describedby="helpId">
+        <button id="textbutton" mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+        <!-- <small id="helpId" class="text-muted">Help text</small> -->
+      </div>
+    </div>
+  </div>
+  <h1>datepicker</h1>
+  <div class="row">
+    <div class="col-md-12">
+      <div class="form-group ">
+        <input [matDatepicker]="startDate" class="form-control hide-underline"
+          placeholder="{{'HRZ_CMP_TASKS_Start_Date'|translate}}" name="startDate" autocomplete="off"
+          (click)="startDate.open();">
+        <!-- <mat-datepicker-toggle matSuffix [for]="startDate" class="calender"></mat-datepicker-toggle> -->
+        <button id="textbutton" mat-icon-button matSuffix>
+          <mat-icon>accessibility</mat-icon>
+        </button>
+        <mat-datepicker #startDate disabled="false"></mat-datepicker>
+      </div>
+    </div>
+  </div>

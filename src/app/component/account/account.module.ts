@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SignUpService } from './sign-up/sign-up.service';
 import { AccountComponent } from './account.component';
 import { LoginComponent } from './login/login.component';
+import { SliderComponent } from './slider/slider.component';
 
 const accountRouting: Routes = [
   { path: '', component: AccountComponent },
@@ -30,7 +31,7 @@ const accountRouting: Routes = [
     FormsModule,
     AngularMaterialModule,
   ],
-  declarations: [SignUpComponent, AccountComponent, LoginComponent],
+  declarations: [SignUpComponent, AccountComponent, LoginComponent, SliderComponent],
   providers: [SignUpService],
 })
 export class AccountModule {}
